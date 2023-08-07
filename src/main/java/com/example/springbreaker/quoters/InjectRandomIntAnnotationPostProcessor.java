@@ -12,9 +12,10 @@ import java.util.Random;
  * Чтобы это заработало, нужно добавить этот класс в контекст.
  */
 public class InjectRandomIntAnnotationPostProcessor implements BeanPostProcessor {
+
+    // этот метод будет вызван при инициализации каждого бина?
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-//        return BeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
         Field[] fields = bean.getClass().getDeclaredFields();
         for (Field field : fields) {
             InjectRandomInt annotation = field.getAnnotation(InjectRandomInt.class);
@@ -27,12 +28,13 @@ public class InjectRandomIntAnnotationPostProcessor implements BeanPostProcessor
                 ReflectionUtils.setField(field, bean, i);
             }
         }
+
         return bean;
     }
 
+
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-//        return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
         return bean;
     }
 }

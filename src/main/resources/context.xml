@@ -18,4 +18,6 @@
 
     <bean class="com.example.springbreaker.quoters.InjectRandomIntAnnotationPostProcessor"/>
 
+    <bean class="com.example.springbreaker.quoters.ProfilingHandlerBeanPostProcessor" />
+
 </beans>
