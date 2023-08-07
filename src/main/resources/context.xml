@@ -25,4 +25,6 @@
     <bean class="com.example.springbreaker.quoters.ProfilingHandlerBeanPostProcessor" />
 
     <bean class="com.example.springbreaker.quoters.PostProxyInvokerContextListener" />
+
+    <bean class="com.example.springbreaker.quoters.DeprecationHandlerBeanFactoryPostProcessor" />
 </beans>
