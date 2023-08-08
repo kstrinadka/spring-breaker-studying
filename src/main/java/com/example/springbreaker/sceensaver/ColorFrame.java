@@ -18,6 +18,7 @@ public abstract class ColorFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
+    // Как сделать, чтобы цвет менялся каждые 3 секунды (через свой собственный SCOPE)
     public void showOnRandomPlace() {
         Random random = new Random();
         setLocation(random.nextInt(1200), random.nextInt(700));

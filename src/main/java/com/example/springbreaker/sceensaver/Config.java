@@ -14,7 +14,7 @@ public class Config {
 
     //Как обновлять prototype в синглтоне?
     @Bean
-    @Scope(value = "prototype")
+    @Scope(value = "periodical")
     public Color color() {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
