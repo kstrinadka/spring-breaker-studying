@@ -11,11 +11,12 @@ public class Config {
 
     // это не метод
     // это объявление бина в java конфигурации (выглядит как метод)
+
+    //Как обновлять prototype в синглтоне?
     @Bean
-    @Scope("prototype")
-    public Color color() {
-        Random random = new Random();
-        return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
+//    @Scope(value = "prototype"/*, proxyMode = ScopedProxyMode.TARGET_CLASS*/)
+    public ColorProvider colorProvider() {
+        return new RandomColorProvider();
     }
 
 
